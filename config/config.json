@@ -1,0 +1,9 @@
+{
+  "sourcePath": "resources",
+  "tmpPath": ".tmp",
+  "destPath": "public",
+  "staticPath": "static",
+
+  "cssMin": false,
+  "stylesPath": "css"
+}
