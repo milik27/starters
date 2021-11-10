@@ -15,7 +15,7 @@ global.$ = {
   tasks: require('./gulp/tasks.js'),
   config: require('./config/config.json'),
   // merge: require('merge-stream'),
-  // argv: require('yargs').argv
+  argv: require('yargs').argv
 }
 
 $.tasks.forEach(taskPath => {
@@ -24,11 +24,18 @@ $.tasks.forEach(taskPath => {
 
 $.gulp.task('dev', $.gulp.series(
   $.gulp.parallel('clean'),
-  $.gulp.parallel('styles'),
+  $.gulp.parallel('styles', 'svg', 'svg:sprite', 'content', 'imagemin', 'scripts:libs', 'scripts'),
+  $.gulp.parallel('prepareHtml'),
+  $.gulp.parallel('watch', 'serve')
 ))
 
 $.gulp.task('build', $.gulp.series(
   $.gulp.parallel('clean'),
+  $.gulp.parallel('styles', 'scripts:libs', 'scripts'),
+  $.gulp.parallel('svg', 'svg:sprite', 'content', 'imagemin'),
+  $.gulp.parallel('prepareHtml'),
+  $.gulp.parallel('dist'),
+  $.gulp.parallel('ftp')
 ))
 
 /*

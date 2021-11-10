@@ -3,7 +3,38 @@
   "tmpPath": ".tmp",
   "destPath": "public",
   "staticPath": "static",
+  "contentPath": "assets",
+
+  "concatScripts": false,
+  "imagemin": true,
+
+  "htmlPath": "html",
+
+  "scriptsPath": "js",
+  "babel": true,
+  "concatFilePath": "",
 
   "cssMin": false,
-  "stylesPath": "css"
+  "stylesPath": "css",
+
+  "svgSpritePath": "svg/sprite",
+  "svgPath": "svg/static",
+  "supportJsLibs": [],
+
+  "imagesPath": "images",
+
+  "ftp": {
+    "enabled": false,
+    "host": "",
+    "login": "",
+    "password": "",
+    "remotePath": ""
+  },
+  "sftp": {
+    "enabled": false,
+    "host": "",
+    "login": "",
+    "password": "",
+    "remotePath": ""
+  }
 }
